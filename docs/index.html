@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Harness-Aware Evaluation of LLM Agents: a survey of systems, benchmarks, and protocols.">
+    <meta name="theme-color" content="#071b24">
+    <meta property="og:title" content="Harness-Aware Evaluation of LLM Agents">
+    <meta property="og:description" content="A four-factor framework for interpreting and comparing LLM agent evaluations.">
+    <meta property="og:type" content="website">
+    <title>Harness-Aware Evaluation of LLM Agents</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="preload" href="assets/fonts/Karbon-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Karbon-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Karbon-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <nav class="nav shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Harness-Aware Evaluation home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/logos/vector-mark-white.webp" alt="">
+          </span>
+          <span>Harness-Aware Evaluation</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links" data-nav-links>
+          <a href="#framework">Framework</a>
+          <a href="#evidence">Evidence</a>
+          <a href="#directions">Directions</a>
+          <a href="#citation">Citation</a>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="deck-controls" aria-label="Page navigation" data-deck-controls>
+      <button type="button" aria-label="Previous section" data-deck-prev>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>
+      </button>
+      <button type="button" aria-label="Next section" data-deck-next>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 10 6 6 6-6"/></svg>
+      </button>
+    </nav>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-grid shell">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow"><span></span> Survey · 2026</p>
+            <h1><span>Harness-Aware</span><span>Evaluation of</span><span><em>LLM Agents</em></span></h1>
+            <p class="subtitle">Systems, Benchmarks, and Protocols</p>
+            <p class="lede">A benchmark score characterizes a complete evaluation configuration, not the model alone.</p>
+
+            <div class="authors" aria-label="Authors">
+              <a href="https://orcid.org/0009-0003-6559-863X">Ahmed Y. Radwan</a>
+              <a href="https://orcid.org/0000-0003-1902-9877">Athanasios V. Vasilakos</a>
+              <a href="https://orcid.org/0000-0002-9481-1257">Shaina Raza</a>
+            </div>
+            <p class="affiliations">
+              <span>Vector Institute</span>
+              <span>University of Agder</span>
+            </p>
+
+            <div class="hero-actions">
+              <span class="button button-primary is-placeholder" aria-disabled="true" title="arXiv identifier forthcoming">
+                <img src="assets/logos/arxiv.webp" alt="" aria-hidden="true"> arXiv: XXX
+              </span>
+              <a class="button button-secondary" href="https://github.com/VectorInstitute/harness-aware-evaluation">
+                <img src="assets/logos/github.webp" alt="" aria-hidden="true"> Repository
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Evaluation configuration" data-reveal>
+            <div class="orbit orbit-model"><span>M</span><small>Model</small></div>
+            <div class="orbit orbit-harness"><span>H</span><small>Harness</small></div>
+            <div class="orbit orbit-environment"><span>E</span><small>Environment</small></div>
+            <div class="orbit orbit-evaluator"><span>V</span><small>Evaluator</small></div>
+            <div class="score-card">
+              <span>Reported score</span>
+              <strong>S<sub>B</sub></strong>
+              <small>f<sub>B</sub>(M, H, E, V)</small>
+            </div>
+            <div class="protocol-ring">Evaluation protocol</div>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#abstract" aria-label="Continue to abstract">
+          <span>Scroll to explore</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 10 6 6 6-6"/></svg>
+        </a>
+        <div class="hero-rule" aria-hidden="true"></div>
+      </section>
+
+      <section class="section intro-section" id="abstract">
+        <div class="shell narrow">
+          <p class="section-kicker" data-reveal>Abstract</p>
+          <h2 data-reveal>The system around the model changes what the score means.</h2>
+          <p class="abstract" data-reveal>
+            LLM-based agents combine model capabilities with memory, tools, and execution control. Changing this surrounding
+            harness can alter performance and even reverse model rankings, yet benchmark reports often omit the configuration,
+            resource budget, or scoring procedure needed to interpret the result. This survey introduces a four-factor framework
+            for harness-aware evaluation, maps representative systems and benchmarks to it, and provides reporting guidance for
+            more consistent and reproducible comparisons.
+          </p>
+        </div>
+      </section>
+
+      <section class="section framework-section" id="framework">
+        <div class="shell">
+          <div class="section-heading split-heading" data-reveal>
+            <div>
+              <p class="section-kicker">The framework</p>
+              <h2>Evaluate the configuration, not an isolated model.</h2>
+            </div>
+            <p>Every result emerges from four interacting factors, under a protocol that controls tasks, budgets, repeated runs, and aggregation.</p>
+          </div>
+
+          <div class="factor-grid">
+            <article class="factor-card factor-model" data-reveal>
+              <div class="factor-symbol">M</div>
+              <p class="factor-number">01</p>
+              <h3>Model</h3>
+              <p>Backbone weights, decoding choices, and tool-use capability.</p>
+            </article>
+            <article class="factor-card factor-harness" data-reveal>
+              <div class="factor-symbol">H</div>
+              <p class="factor-number">02</p>
+              <h3>Harness</h3>
+              <p>Context, tools, memory, control flow, verification, and permissions.</p>
+            </article>
+            <article class="factor-card factor-environment" data-reveal>
+              <div class="factor-symbol">E</div>
+              <p class="factor-number">03</p>
+              <h3>Environment</h3>
+              <p>Tasks, data, applications, services, users, and execution sandbox.</p>
+            </article>
+            <article class="factor-card factor-evaluator" data-reveal>
+              <div class="factor-symbol">V</div>
+              <p class="factor-number">04</p>
+              <h3>Evaluator</h3>
+              <p>Tests, rubrics, judges, outcome checks, and success criteria.</p>
+            </article>
+          </div>
+
+          <div class="protocol-strip" data-reveal>
+            <span>Protocol</span>
+            <ul>
+              <li>Task splits</li>
+              <li>Resource budgets</li>
+              <li>Repeated runs</li>
+              <li>Aggregation</li>
+            </ul>
+          </div>
+
+          <figure class="paper-figure framed-figure" data-reveal>
+            <img src="assets/figures/evaluation-framework.webp" alt="Overview of the model, harness, environment, and evaluator in harness-aware agent evaluation." loading="lazy">
+            <figcaption>Overview of harness-aware evaluation. Reported performance belongs to the complete configuration.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section harness-section" id="harness">
+        <div class="shell">
+          <div class="section-heading" data-reveal>
+            <p class="section-kicker">Inside the harness</p>
+            <h2>Six mechanisms shape agent execution.</h2>
+          </div>
+          <div class="mechanism-grid">
+            <article data-reveal><span>01</span><h3>Context &amp; memory</h3><p>Select, retain, retrieve, and compress information across steps.</p></article>
+            <article data-reveal><span>02</span><h3>Tool interfaces</h3><p>Define operations, schemas, dispatch, and returned observations.</p></article>
+            <article data-reveal><span>03</span><h3>Planning &amp; execution</h3><p>Decompose tasks and govern how plans become actions.</p></article>
+            <article data-reveal><span>04</span><h3>Coordination</h3><p>Assign roles, share state, and route work across multiple agents.</p></article>
+            <article data-reveal><span>05</span><h3>Verification &amp; recovery</h3><p>Check intermediate work, retry failures, and revise trajectories.</p></article>
+            <article data-reveal><span>06</span><h3>Guardrails &amp; permissions</h3><p>Constrain actions, enforce boundaries, and escalate to people.</p></article>
+          </div>
+
+          <div class="shift-block">
+            <div class="shift-lead" data-reveal>
+              <p class="section-kicker">Same model, different harness</p>
+              <h3>One mechanism is enough to move the score.</h3>
+              <p>Each circle is one change, with the model and benchmark held fixed. A model swap on the same interface, GPT-4 Turbo to GPT-4o, moved τ-bench by 3.5 points. These contrasts come from separate studies, so they are not a ranking.</p>
+            </div>
+            <div class="shift-orbit" aria-label="Harness changes around a fixed model. Tools, 12 percent to 18 percent. Context, 15 percent to 18 percent. Planning, 73 percent to 71.4 percent. Verifier, 73 percent to 73.2 percent." data-reveal>
+              <div class="shift-node shift-context">
+                <strong>+3.0</strong>
+                <span>15% to 18%</span>
+                <small>Context</small>
+              </div>
+              <div class="shift-node shift-tools">
+                <strong>+6.0</strong>
+                <span>12% to 18%</span>
+                <small>Tools</small>
+              </div>
+              <div class="shift-node shift-verifier">
+                <strong>+0.2</strong>
+                <span>73.0 to 73.2</span>
+                <small>Verifier</small>
+              </div>
+              <div class="shift-node shift-planning">
+                <strong>−1.6</strong>
+                <span>73.0 to 71.4</span>
+                <small>Planning</small>
+              </div>
+              <div class="shift-core">
+                <span>Fixed model</span>
+                <strong>S<sub>B</sub></strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section evidence-section" id="evidence">
+        <div class="shell">
+          <div class="section-heading split-heading" data-reveal>
+            <div>
+              <p class="section-kicker">Evidence base</p>
+              <h2>A rapidly shifting research landscape.</h2>
+            </div>
+            <p>The selected corpus is recent and unevenly distributed, revealing where evidence is strongest and where attribution remains limited.</p>
+          </div>
+
+          <div class="stats-grid">
+            <article data-reveal><strong>110</strong><span>works reviewed</span></article>
+            <article data-reveal><strong>75%</strong><span>published in 2025–26</span></article>
+            <article data-reveal><strong>56%</strong><span>preprints or system docs</span></article>
+            <article data-reveal><strong>16</strong><span>titles using “harness”</span></article>
+          </div>
+
+          <div class="chart-grid">
+            <figure class="paper-figure paper-figure--compact" data-reveal>
+              <img src="assets/figures/corpus-timeline.webp" alt="Reviewed works by research topic and year from 2022 to 2026." width="1036" height="972">
+              <figcaption>Research topics in the selected corpus.</figcaption>
+            </figure>
+            <figure class="paper-figure paper-figure--compact" data-reveal>
+              <img src="assets/figures/publication-types.webp" alt="Reviewed works divided by publication type." width="1036" height="972">
+              <figcaption>Publication types in the selected corpus.</figcaption>
+            </figure>
+            <figure class="paper-figure paper-figure--wide" data-reveal>
+              <img src="assets/figures/topic-shift.webp" alt="Terms used in paper titles, sized by frequency and colored by whether they skew toward recent work." width="1554" height="775">
+              <figcaption>Title terms show the recent shift toward explicit harness research.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contributions-section" id="contributions">
+        <div class="shell">
+          <p class="section-kicker" data-reveal>What this survey contributes</p>
+          <div class="contribution-list">
+            <article data-reveal>
+              <span>01</span>
+              <div><h2>Unified evaluation taxonomy</h2><p>Connects model, harness, environment, and evaluator in one configuration, interpreted under an explicit protocol.</p></div>
+            </article>
+            <article data-reveal>
+              <span>02</span>
+              <div><h2>Mapping of empirical evidence</h2><p>Distinguishes factors that studies explicitly evaluate from those merely present in the execution setting.</p></div>
+            </article>
+            <article data-reveal>
+              <span>03</span>
+              <div><h2>Reporting guidance and gaps</h2><p>Identifies what evaluations should report and where evidence remains thin across adaptation, resources, and interactions.</p></div>
+            </article>
+          </div>
+
+          <figure class="paper-figure timeline-figure" data-reveal>
+            <img src="assets/figures/harness-timeline.webp" alt="Timeline from LLM foundations through agent execution and frameworks to harness control and evaluation." loading="lazy">
+            <figcaption>Selected milestones from language-model foundations to harness control and evaluation.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section directions-section" id="directions">
+        <div class="shell">
+          <div class="section-heading" data-reveal>
+            <p class="section-kicker">Open challenges</p>
+            <h2>What harness-aware evaluation needs next.</h2>
+          </div>
+          <div class="direction-list">
+            <article data-reveal><span>01</span><h3>Adaptive harnesses</h3><p>Report the initial configuration, modification space, feedback, update frequency, and resulting harness.</p></article>
+            <article data-reveal><span>02</span><h3>Fair resource budgets</h3><p>Compare systems under matched or normalized tokens, calls, time, tool use, compute, and human intervention.</p></article>
+            <article data-reveal><span>03</span><h3>Generalizable effects</h3><p>Test interventions across multiple models, environments, and task families with controlled comparisons.</p></article>
+            <article data-reveal><span>04</span><h3>Factor interactions</h3><p>Measure how model, harness, environment, and evaluator affect one another without exhaustive search.</p></article>
+            <article data-reveal><span>05</span><h3>Complete reporting</h3><p>Develop standardized, machine-readable descriptions of configurations, budgets, and repeated-run procedures.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section citation-section" id="citation">
+        <div class="shell closing-stack">
+          <div class="citation-grid">
+            <div data-reveal>
+              <p class="section-kicker">Citation</p>
+              <h2>Cite this survey.</h2>
+              <p>The publication identifier will be updated when the paper is posted.</p>
+            </div>
+            <div class="citation-box" data-reveal>
+              <pre><code id="bibtex">@article{radwan2026harness,
+  title   = {Harness-Aware Evaluation of LLM Agents:
+             Systems, Benchmarks, and Protocols},
+  author  = {Radwan, Ahmed Y. and Vasilakos, Athanasios V.
+             and Raza, Shaina},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}</code></pre>
+              <button class="copy-button" type="button" data-copy data-copy-target="bibtex">
+                <span data-copy-label>Copy BibTeX</span>
+              </button>
+            </div>
+          </div>
+          <div class="ack-band" id="acknowledgements" data-reveal>
+            <p class="section-kicker">Acknowledgements</p>
+            <p>Resources used in preparing this research were provided, in part, by the Province of Ontario, the Government of Canada through CIFAR, and companies sponsoring the Vector Institute. This research was funded by the European Union’s Horizon Europe AIXPERT project (Grant Agreement No. 101214389).</p>
+            <div class="partner-logos">
+              <a href="https://vectorinstitute.ai/" aria-label="Vector Institute">
+                <img src="assets/logos/vector-black.webp" alt="Vector Institute">
+              </a>
+              <a href="https://aixpert.eu/" aria-label="AIXPERT project">
+                <img src="assets/logos/aixpert.webp" alt="AIXPERT">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>Harness-Aware Evaluation of LLM Agents</p>
+        <p>© <span data-year>2026</span> · <a href="https://github.com/VectorInstitute/harness-aware-evaluation">View on GitHub</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
