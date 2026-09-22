@@ -4,18 +4,13 @@
 
 [Project website](https://vectorinstitute.github.io/harness-aware-evaluation/) · [arXiv: XXX](https://arxiv.org/)
 
+Contact: [Shaina Raza](mailto:shaina.raza@vectorinstitute.ai)
+
 LLM agent results depend on more than a backbone model. This survey treats each reported score as the outcome of a complete evaluation configuration:
 
 > **Model (M) + Harness (H) + Environment (E) + Evaluator (V)**, tested under an explicit evaluation protocol.
 
 The framework helps distinguish model capability from the effects of context and memory, tool interfaces, execution control, coordination, verification, permissions, environmental conditions, scoring criteria, and resource budgets.
-
-## Paper
-
-- **Paper:** arXiv: XXX
-- **Website:** <https://vectorinstitute.github.io/harness-aware-evaluation/>
-- **Repository:** <https://github.com/VectorInstitute/harness-aware-evaluation>
-- **Contact:** [Shaina Raza](mailto:shaina.raza@vectorinstitute.ai)
 
 ## Cited literature
 
