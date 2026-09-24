@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vectorinstitute.github.io/harness-aware-evaluation/sitemap.xml

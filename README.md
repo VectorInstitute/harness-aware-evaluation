@@ -2,7 +2,7 @@
 
 **Systems, Benchmarks, and Protocols**
 
-[Project website](https://vectorinstitute.github.io/harness-aware-evaluation/) · [arXiv: XXX](https://arxiv.org/)
+[Project website](https://vectorinstitute.github.io/harness-aware-evaluation/) · [Preprint](https://www.preprints.org/manuscript/202609.2140)
 
 Contact: [Shaina Raza](mailto:shaina.raza@vectorinstitute.ai)
 
@@ -137,8 +137,12 @@ The list includes every work actively cited in the manuscript. It excludes bibli
              Systems, Benchmarks, and Protocols},
   author  = {Radwan, Ahmed Y. and Vasilakos, Athanasios V.
              and Raza, Shaina},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX},
-  year    = {2026}
+  journal   = {Preprints},
+  year      = {2026},
+  month     = {September},
+  publisher = {Preprints},
+  doi       = {10.20944/preprints202609.2140.v1},
+  url       = {https://doi.org/10.20944/preprints202609.2140.v1}
 }
 ```
 

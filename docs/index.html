@@ -3,12 +3,48 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Harness-Aware Evaluation of LLM Agents: a survey of systems, benchmarks, and protocols.">
-    <meta name="theme-color" content="#071b24">
-    <meta property="og:title" content="Harness-Aware Evaluation of LLM Agents">
-    <meta property="og:description" content="A four-factor framework for interpreting and comparing LLM agent evaluations.">
-    <meta property="og:type" content="website">
     <title>Harness-Aware Evaluation of LLM Agents</title>
+    <meta name="description" content="A benchmark score characterizes a complete evaluation configuration, not the model alone. A survey of LLM agent systems, benchmarks, and protocols.">
+    <meta name="theme-color" content="#071b24">
+    <link rel="canonical" href="https://vectorinstitute.github.io/harness-aware-evaluation/">
+    <meta property="og:title" content="Harness-Aware Evaluation of LLM Agents">
+    <meta property="og:description" content="A benchmark score characterizes a complete evaluation configuration, not the model alone.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vectorinstitute.github.io/harness-aware-evaluation/">
+    <meta property="og:image" content="https://vectorinstitute.github.io/harness-aware-evaluation/assets/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Harness-Aware Evaluation of LLM Agents">
+    <meta name="twitter:description" content="A benchmark score characterizes a complete evaluation configuration, not the model alone.">
+    <meta name="twitter:image" content="https://vectorinstitute.github.io/harness-aware-evaluation/assets/og.png">
+    <meta name="citation_title" content="Harness-Aware Evaluation of LLM Agents: Systems, Benchmarks, and Protocols">
+    <meta name="citation_author" content="Radwan, Ahmed Y.">
+    <meta name="citation_author" content="Vasilakos, Athanasios V.">
+    <meta name="citation_author" content="Raza, Shaina">
+    <meta name="citation_publication_date" content="2026/09">
+    <meta name="citation_journal_title" content="Preprints">
+    <meta name="citation_publisher" content="Preprints">
+    <meta name="citation_doi" content="10.20944/preprints202609.2140.v1">
+    <meta name="citation_abstract" content="LLM-based agents combine model capabilities with memory, tools, and execution control. Changing this surrounding harness can alter performance and even reverse model rankings, yet benchmark reports often omit the configuration, resource budget, or scoring procedure needed to interpret the result. This survey introduces a four-factor framework for harness-aware evaluation, maps representative systems and benchmarks to it, and provides reporting guidance for more consistent and reproducible comparisons.">
+    <meta name="citation_fulltext_html_url" content="https://www.preprints.org/manuscript/202609.2140">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Harness-Aware Evaluation of LLM Agents: Systems, Benchmarks, and Protocols",
+      "description": "A benchmark score characterizes a complete evaluation configuration, not the model alone.",
+      "datePublished": "2026-09",
+      "url": "https://vectorinstitute.github.io/harness-aware-evaluation/",
+      "sameAs": "https://doi.org/10.20944/preprints202609.2140.v1",
+      "identifier": "10.20944/preprints202609.2140.v1",
+      "isPartOf": "Preprints",
+      "publisher": { "@type": "Organization", "name": "Preprints", "url": "https://www.preprints.org" },
+      "author": [
+        { "@type": "Person", "name": "Ahmed Y. Radwan", "affiliation": "Vector Institute", "url": "https://orcid.org/0009-0003-6559-863X" },
+        { "@type": "Person", "name": "Athanasios V. Vasilakos", "affiliation": "University of Agder", "url": "https://orcid.org/0000-0003-1902-9877" },
+        { "@type": "Person", "name": "Shaina Raza", "affiliation": "Vector Institute", "url": "https://orcid.org/0000-0002-9481-1257" }
+      ]
+    }
+    </script>
     <script>document.documentElement.classList.add("js");</script>
     <link rel="preload" href="assets/fonts/Karbon-Light.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/Karbon-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -69,9 +105,9 @@
             </p>
 
             <div class="hero-actions">
-              <span class="button button-primary is-placeholder" aria-disabled="true" title="arXiv identifier forthcoming">
-                <img src="assets/logos/arxiv.webp" alt="" aria-hidden="true"> arXiv: XXX
-              </span>
+              <a class="button button-primary" href="https://www.preprints.org/manuscript/202609.2140">
+                Preprint
+              </a>
               <a class="button button-secondary" href="https://github.com/VectorInstitute/harness-aware-evaluation">
                 <img src="assets/logos/github.webp" alt="" aria-hidden="true"> Repository
               </a>
@@ -298,7 +334,7 @@
             <div data-reveal>
               <p class="section-kicker">Citation</p>
               <h2>Cite this survey.</h2>
-              <p>The publication identifier will be updated when the paper is posted.</p>
+              <p>Posted in September 2026. <a href="https://doi.org/10.20944/preprints202609.2140.v1">doi:10.20944/preprints202609.2140.v1</a></p>
             </div>
             <div class="citation-box" data-reveal>
               <pre><code id="bibtex">@article{radwan2026harness,
@@ -306,8 +342,12 @@
              Systems, Benchmarks, and Protocols},
   author  = {Radwan, Ahmed Y. and Vasilakos, Athanasios V.
              and Raza, Shaina},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX},
-  year    = {2026}
+  journal   = {Preprints},
+  year      = {2026},
+  month     = {September},
+  publisher = {Preprints},
+  doi       = {10.20944/preprints202609.2140.v1},
+  url       = {https://doi.org/10.20944/preprints202609.2140.v1}
 }</code></pre>
               <button class="copy-button" type="button" data-copy data-copy-target="bibtex">
                 <span data-copy-label>Copy BibTeX</span>
